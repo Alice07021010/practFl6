@@ -1,0 +1,8 @@
+.dart_tool/
+build/
+.idea/
+.vscode/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+dist_measurements/

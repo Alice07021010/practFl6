@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Учебное Flutter Web приложение ООО Тмыв денег">
+  <title>ООО «Тмыв денег»</title>
+  <style>
+    html, body { height: 100%; margin: 0; }
+    body { font-family: Arial, sans-serif; background: #f7f5fc; }
+    #startup-loader {
+      position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+      background: #f7f5fc; z-index: 9999;
+    }
+    .startup-card { text-align: center; color: #292733; }
+    .startup-title { font-size: 26px; font-weight: 700; margin-bottom: 18px; }
+    .spinner {
+      width: 42px; height: 42px; border: 4px solid #d9d6e6; border-top-color: #5665a8;
+      border-radius: 50%; margin: 0 auto; animation: spin .8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <div id="startup-loader">
+    <div class="startup-card">
+      <div class="startup-title">ООО «Тмыв денег»</div>
+      <div class="spinner"></div>
+      <p>Загрузка приложения…</p>
+    </div>
+  </div>
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      const loader = document.getElementById('startup-loader');
+      if (loader) loader.remove();
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
